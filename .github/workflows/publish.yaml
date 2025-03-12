@@ -40,7 +40,6 @@ jobs:
       - name: Publish to PyPiTest
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-            password: ${{ secrets.DEV_PYPI_CLI_TOKEN }}
             print-hash: true
             packages-dir: dist/
             repository-url: https://test.pypi.org/legacy/
@@ -49,6 +48,5 @@ jobs:
         if: github.event_name == 'release' # Publish on releases
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-            password: ${{ secrets.PYPI_CLI_TOKEN }}
             print-hash: true
             packages-dir: dist/
