@@ -8,7 +8,7 @@ from os import environ
 from setuptools import setup
 from setuptools_scm import ScmVersion
 
-
+# Nothing borgir
 def get_local_schema(version: ScmVersion) -> str:
     """
     Generate a custom local version scheme for setuptools-scm.
