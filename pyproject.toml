@@ -5,12 +5,12 @@ requires = ["setuptools>=64",
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "armonik_cli"
+name = "masiv_tui"
 description = "Command-line tool to monitor and manage ArmoniK clusters."
 readme = "README.md"
 dynamic = ["version"]
 requires-python = ">=3.8"
-keywords = ["cloud", "HTC", "CLI", "ArmoniK", "Aneo"]
+keywords = ["cloud", "HTC", "CLI"]
 license = {text = "Apache v2.0 LICENSE"}
 classifiers = [
     "Development Status :: 4 - Beta", # see https://pypi.org/classifiers/
@@ -36,8 +36,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/aneoconsulting/ArmoniK.Api"
-"Bug Tracker" = "https://github.com/aneoconsulting/ArmoniK/issues"
+"Homepage" = "https://github.com/AncientPatata/ArmoniK.CLI-pipelines"
+"Bug Tracker" = "https://github.com/AncientPatata/ArmoniK.CLI-pipelines/issues"
 
 [tool.setuptools]
 include-package-data = true
