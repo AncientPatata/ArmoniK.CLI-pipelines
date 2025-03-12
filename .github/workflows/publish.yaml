@@ -11,6 +11,9 @@ jobs:
   build-publish:
     name: Build and publish package
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Add this permission for PyPI Trusted Publisher
+      contents: read   # This is needed for checkout
     steps:
       - name: Checkout code
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
@@ -40,15 +43,16 @@ jobs:
       - name: Publish to PyPiTest
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-            password: ${{ secrets.DEV_PYPI_CLI_TOKEN }}
             print-hash: true
             packages-dir: dist/
             repository-url: https://test.pypi.org/legacy/
+            attestations: false  # Add this line to disable attestations
 
       - name: Publish to PyPi
         if: github.event_name == 'release' # Publish on releases
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-            password: ${{ secrets.PYPI_CLI_TOKEN }}
             print-hash: true
             packages-dir: dist/
+            attestations: false  # Add this line to disable attestations
+
